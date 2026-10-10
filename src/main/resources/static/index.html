@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KrishiCredit | Smart Agricultural Lending</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#top"><span class="brand-mark">K</span><span>Krishi<span>Credit</span></span></a>
+    <p class="sidebar-label">WORKSPACE</p>
+    <nav>
+      <a class="nav-item active" href="#top"><span>▦</span> Overview</a>
+      <a class="nav-item" href="#application"><span>＋</span> New application</a>
+      <a class="nav-item" href="#portfolio"><span>◫</span> Loan portfolio <b>12</b></a>
+      <a class="nav-item" href="#insights"><span>◌</span> Risk insights</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="help-card"><span>✦</span><div><strong>AI Decision Support</strong><small>Data-led, human reviewed</small></div></div>
+      <div class="officer"><div class="avatar">SR</div><div><strong>Sarah R.</strong><small>Loan Officer</small></div><span class="more">•••</span></div>
+    </div>
+  </aside>
+
+  <main id="top">
+    <header>
+      <div><p class="eyebrow">SATURDAY, 10 OCTOBER</p><h1>Good morning, Sarah <span>✦</span></h1><p class="subtitle">Here is what needs your attention today.</p></div>
+      <div class="header-actions"><button class="icon-button" aria-label="Notifications">♧<i></i></button><button class="new-button" onclick="document.querySelector('#application').scrollIntoView({behavior:'smooth'})">+ New application</button></div>
+    </header>
+
+    <section class="metrics" aria-label="Portfolio overview">
+      <article><div class="metric-icon green">₹</div><div><span>Applications this month</span><strong>128</strong><small class="positive">↑ 12.5% <em>vs. last month</em></small></div></article>
+      <article><div class="metric-icon gold">◫</div><div><span>Pending review</span><strong>12</strong><small><em>4 need attention</em></small></div></article>
+      <article><div class="metric-icon peach">✓</div><div><span>Approval rate</span><strong>74.2%</strong><small class="positive">↑ 3.1% <em>vs. last month</em></small></div></article>
+      <article><div class="metric-icon purple">◌</div><div><span>Average risk score</span><strong>32</strong><small class="positive">↓ 4 pts <em>lower is better</em></small></div></article>
+    </section>
+
+    <section id="application" class="application-section">
+      <div class="section-title"><div><p class="eyebrow">NEW CASE</p><h2>Assess a loan application</h2><p>Enter the farmer’s details to get a clear AI-assisted recommendation.</p></div><div class="step-pill"><b>1</b> Farmer profile <span>—</span><b>2</b> Loan details <span>—</span><b>3</b> Assessment</div></div>
+      <form id="loanForm">
+        <div class="form-grid">
+          <section class="form-card"><div class="card-heading"><span class="card-icon">♙</span><div><h3>Farmer & farm profile</h3><p>The core information about the applicant.</p></div></div>
+            <div class="fields two"><label>Farmer name<input id="farmerName" value="Ramesh Kumar" required></label><label>Location<input id="location" value="Thanjavur, Tamil Nadu" required></label></div>
+            <div class="fields three"><label>Land owned <div class="input-suffix"><input id="land" type="number" value="4.5" min="0" step="0.1"><span>acres</span></div></label><label>Primary crop<select id="crop"><option>Paddy</option><option>Wheat</option><option>Sugarcane</option><option>Cotton</option><option>Vegetables</option></select></label><label>Farming experience <div class="input-suffix"><input id="experience" type="number" value="12" min="0"><span>years</span></div></label></div>
+            <label>Annual farm income <div class="input-prefix"><span>₹</span><input id="annualIncome" type="number" value="480000" min="0"></div><small>Estimated income from all agricultural activities</small></label>
+          </section>
+          <section class="form-card"><div class="card-heading"><span class="card-icon warm">₹</span><div><h3>Loan request & financials</h3><p>Information used for affordability checks.</p></div></div>
+            <div class="fields two"><label>Loan purpose<select id="purpose"><option>Crop cultivation</option><option>Farm equipment</option><option>Irrigation improvement</option><option>Working capital</option></select></label><label>Requested amount <div class="input-prefix"><span>₹</span><input id="loanAmount" type="number" value="500000" min="0"></div></label></div>
+            <div class="fields three"><label>Repayment tenure<select id="tenure"><option value="12">12 months</option><option value="18">18 months</option><option value="24">24 months</option><option value="36">36 months</option></select></label><label>Existing obligations <div class="input-prefix"><span>₹</span><input id="existingDebt" type="number" value="60000" min="0"></div></label><label>Missed payments<select id="missedPayments"><option value="0">None</option><option value="1">1 payment</option><option value="2">2 payments</option><option value="3">3+ payments</option></select></label></div>
+            <label>Seasonal weather outlook<select id="weatherRisk"><option value="low">Low risk · normal rainfall expected</option><option value="medium">Medium risk · irregular rainfall</option><option value="high">High risk · drought / flood alerts</option></select><small>Based on available local agricultural advisory data</small></label>
+          </section>
+        </div>
+        <div class="form-footer"><div class="data-note"><span>✓</span> Your assessment is supported by financial history and local agricultural signals.</div><button class="assess-button" type="submit"><span>✦</span> Generate AI assessment <b>→</b></button></div>
+      </form>
+    </section>
+
+    <section id="insights" class="assessment hidden" aria-live="polite">
+      <div class="assessment-top"><div><p class="eyebrow">AI LENDING BRIEF</p><h2>Assessment for <span id="resultName">Ramesh Kumar</span></h2><p id="resultMeta">Paddy cultivation · Thanjavur, Tamil Nadu</p></div><span id="riskBadge" class="risk-badge low">LOW RISK</span></div>
+      <div class="assessment-grid"><article class="score-card"><p>Credit risk score</p><div class="score-line"><strong id="riskScore">32</strong><span>/ 100</span></div><div class="meter"><i id="scoreMeter"></i></div><div class="meter-labels"><span>Low</span><span>Medium</span><span>High</span></div><p id="scoreSummary" class="score-summary"></p></article>
+      <article class="recommendation"><div class="recommendation-icon">✦</div><div><p>AI recommendation</p><h3 id="recommendationTitle">Suitable to proceed</h3><p id="recommendationText">Recommended amount and terms will appear here.</p></div></article>
+      <article class="factors"><p>Key factors considered</p><ul id="factorList"></ul></article></div>
+      <div class="decision-bar"><div><span class="decision-dot">✓</span><div><strong id="suggestedAction">Continue with normal verification</strong><p>AI recommendation is advisory. Final approval remains with the loan officer.</p></div></div><div><button class="secondary" onclick="window.print()">Print brief</button><button class="approve" onclick="approveApplication()">Mark for approval →</button></div></div>
+    </section>
+
+    <section id="portfolio" class="portfolio"><div class="section-title compact"><div><p class="eyebrow">RECENT ACTIVITY</p><h2>Applications requiring attention</h2></div><a href="#top">View all applications →</a></div><div class="table-wrap"><table><thead><tr><th>APPLICANT</th><th>LOAN PURPOSE</th><th>AMOUNT</th><th>RISK</th><th>STATUS</th><th></th></tr></thead><tbody><tr><td><div class="person"><div class="mini-avatar orange">MS</div><span><strong>Meena Selvam</strong><small>Madurai, Tamil Nadu</small></span></div></td><td>Irrigation improvement</td><td>₹3,20,000</td><td><span class="table-risk medium">Medium · 48</span></td><td><span class="status review">Needs review</span></td><td>→</td></tr><tr><td><div class="person"><div class="mini-avatar green">AK</div><span><strong>Arun Kumar</strong><small>Salem, Tamil Nadu</small></span></div></td><td>Crop cultivation</td><td>₹2,50,000</td><td><span class="table-risk low">Low · 24</span></td><td><span class="status ready">Ready to approve</span></td><td>→</td></tr></tbody></table></div></section>
+  </main>
+  <div id="toast" class="toast">Application marked for approval.</div>
+  <script src="app.js"></script>
+</body>
+</html>
